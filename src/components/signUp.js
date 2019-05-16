@@ -1,7 +1,7 @@
 import React from "react";
-import "./styles/loginPage.css";
+import "./styles/signUp.css";
 import logo from "./image/Group.svg";
-export class LoginPage extends React.Component {
+export class SignUp extends React.Component {
   render() {
     return (
           
@@ -18,12 +18,14 @@ export class LoginPage extends React.Component {
           <div className="div">
             <span>Password</span>
             <input type='password' className="login-input transition" />
-            <span className='forgot-password'>Forgot password?</span>
           </div>
-          <button className="login-button">Sign in</button>
-          <span className='create-account'>Create account</span>
+          <div className="div">
+            <span>Confirm Password</span>
+            <input type='password' className="login-input transition" />
+          </div>
+          <button className="login-button">Sign Up</button>
+         <div> <span className='login-here'>Have already an account?</span></div>
         </div>
-        
       </div>
     );
   }

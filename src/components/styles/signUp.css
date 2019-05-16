@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 333px;
+  height: 400px;
   width: 384px;
   background: #f6f6f6;
  
@@ -24,27 +24,27 @@
   flex-direction: column;
 }
 .login-input {
-  background: #ffffff;
-  border: 1px solid #c4c4c4;
-  box-sizing: border-box;
-  border-radius: 4px;
-  width: 329px;
-  height: 50px;
-  cursor: pointer;
-  font-size: 24px;
-  outline: none;
-}
-.login-input:hover{
-  border: 1px solid #0468e7;
-}
-.transition {
-   transition: 0.3s;
-}
+    background: #ffffff;
+    border: 1px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    width: 329px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 24px;
+    outline: none;
+  }
+  .login-input:hover{
+    border: 1px solid #0468e7;
+  }
+  .transition {
+     transition: 0.3s;
+  }
 .login-button {
   width: 123px;
   height: 46px;
-  margin: 30px;
-  margin-bottom: 30px;
+  margin: 20px;
+  /* margin-bottom: 30px; */
   background: #0468e7;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
@@ -85,36 +85,17 @@ span {
     margin-top: 10px;
     
 }
-.create-account {
-  display: flex;
-  align-content: center;
-  align-self: center;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 17px;
-  color: #535151;
-  cursor: pointer;
-  margin-top: -20px;
+.login-here {
+    display: flex;
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    color: #535151;
+    cursor: pointer;
 }
-.create-account:hover {
-  color: #000000;
-  -webkit-transition: all 1s ease-out; 
+.login-here:hover {
+    -webkit-transition: all 0.3s ease-out; 
+    color: #000000;
 }
-
-.forgot-password {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 12px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  color: #535151;
-  cursor: pointer;
-}
-.forgot-password:hover {
-  color: black;
-  -webkit-transition: all 1s ease-out; 
-}
-
