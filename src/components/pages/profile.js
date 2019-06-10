@@ -19,7 +19,7 @@ export class Profile extends React.Component {
               <img src={Ellipse} alt="" />
               <span> Mikola S.</span>
             </span>
-            <span>Balance: 111 som</span>
+            <span>Balance: 111 som.</span>
           </div>
         </div>
         <div className="table-header">
