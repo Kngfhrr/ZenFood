@@ -68,12 +68,12 @@
   display: flex;
 }
 
-span.table-price {
+.table-price {
   width: 195px;
 }
 
-span.table-name {
-  width: 240px;
+.table-name {
+  width: 340px;
 }
 .menu-on-today {
   font-family: Montserrat;
@@ -129,4 +129,24 @@ span.table-name {
   outline: none;
   color: #ffffff;
   margin-top: 11px;
+}
+.table-name-admin {
+  width: 340px;
+}
+.table-price-admin {
+  width: 100px;
+}
+.add-item-input {
+  width: 500px;
+  height: 40px;
+  border-radius: 3px;
+  margin-top: 20px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.add-item-price-button {
+  width: 50px;
+  height: 40px;
+
 }

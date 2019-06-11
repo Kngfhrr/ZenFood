@@ -70,11 +70,11 @@
   display: flex;
 }
 
-span.table-price {
+.table-price-menu {
   width: 195px;
 }
 
-span.table-name {
+.table-name-menu {
   width: 327px;
 }
 .menu-on-today {
