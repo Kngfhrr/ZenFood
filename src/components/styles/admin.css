@@ -145,8 +145,18 @@
   cursor: pointer;
   font-size: 20px;
 }
-.add-item-price-button {
-  width: 50px;
+.add-item-price {
+  width: 76px;
   height: 40px;
-
+  border-radius: 3px;
+  outline: none;
+  display: flex;
+  align-self: flex-end;
+  font-size: 30px;
+}
+.add-price {
+  display: flex;
+  align-self: flex-end;
+  margin-right: 45px;
+  margin-top: 50px;
 }

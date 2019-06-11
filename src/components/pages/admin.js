@@ -11,13 +11,13 @@ export class Admin extends React.Component {
 
     addItem=()=>{
         Swal.fire({
-            width: 1000,
+            width: 640, 
             heightAuto: false,
-            height: 1000,
-            html: '<div style="display: flex; flex-direction: column">' +
-            '<span>Add item</span>' +
+            html: '<div style="display: flex; flex-direction: column; margin: 50px; align-items: flex-end;">' +
+            '<span>Add dish</span>' +
             '<input class="add-item-input"></input>' +
-            '<input class="add-item-price-button"></input>' +
+            '<span class="add-price">Price</span>' +
+            '<input class="add-item-price"></input>' +
             '</div>',
             text: 'Modal with a custom image.',
             animation: false
@@ -61,7 +61,7 @@ export class Admin extends React.Component {
           <span className='close'/>
         </div>
         <div><span className='line'/></div>
-        <button onClick={this.addItem} className='table-button'>Add item</button>
+        <button onClick={this.addItem} className='table-button'>Add dish</button>
         </div>
       </div>
     );
