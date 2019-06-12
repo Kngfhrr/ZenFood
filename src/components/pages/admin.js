@@ -3,25 +3,33 @@ import logo from "../image/Group.svg";
 import "../styles/admin.css";
 import moment from 'moment'
 import Ellipse from '../image/Ellipse.svg';
-import Swal from "sweetalert2";
+
 
 
 
 export class Admin extends React.Component {
+    state={
+        item: '',
+        price: '',
 
-    addItem=()=>{
-        Swal.fire({
-            width: 640, 
-            heightAuto: false,
-            html: '<div style="display: flex; flex-direction: column; margin: 50px; align-items: flex-end;">' +
-            '<span>Add dish</span>' +
-            '<input class="add-item-input"></input>' +
-            '<span class="add-price">Price</span>' +
-            '<input class="add-item-price"></input>' +
-            '</div>',
-            text: 'Modal with a custom image.',
-            animation: false
-        })
+        added: {
+            added_items: [],
+            added_price: []
+        }
+    }
+
+
+
+   onChangeItem=(e)=> {
+        this.setState({item: e.target.value, price: e.target.value})
+
+   }
+
+    onAddFood = () => {
+        this.state.added.added_items.push(this.state.item);
+        this.state.added.added_price.push(this.state.price);
+        this.setState({item: ''})
+
     }
 
   render() {
@@ -45,7 +53,21 @@ export class Admin extends React.Component {
           <span className="title-profile">Admin Page</span>
           <span className="date-today">{moment().format("ddd DD MMM")}</span>
         </div>
-        
+
+          <div className='add-form'>
+              <div className='add-table-position'>
+              <span>Name food</span>
+              <input onChange={this.onChangeItem} value={this.state.item} className="add-item-input"></input>
+              </div>
+              <div className='add-table-position'>
+              <span>Price</span>
+              <input onChange={this.onChangePrice} className="add-item-price"></input>
+
+              </div>
+              <div>    <button onClick={this.onAddFood} className='add-button'>Add</button></div>
+
+              </div>
+
         <div className="table">
         <span className='menu-on-today'>menu on {moment().format("DD MMM")} (today)</span>
         <div className='table-head'>
@@ -53,13 +75,18 @@ export class Admin extends React.Component {
           <span className='table-price'><b>Price</b></span>
           
         </div>
-        <div><span className='line'/></div>
-        {/*map here  */}
-        <div className='table-head'>
-         <span className='table-name-admin'>some food</span>
-          <span className='table-price-admin'>120 som</span>
-          <span className='close'/>
+
+        {this.state.added.added_items.map((item, index)=>
+            <div key={index}>
+                <div><span className='line'/></div>
+            <div  className='table-head'>
+
+            <span className='table-name-admin'>{item}</span>
+            <span className='table-price-admin'>120 som</span>
+            <span className='close'/>
         </div>
+            </div>)}
+
         <div><span className='line'/></div>
         <button onClick={this.addItem} className='table-button'>Add dish</button>
         </div>
