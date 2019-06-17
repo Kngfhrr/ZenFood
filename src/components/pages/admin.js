@@ -17,15 +17,10 @@ export class Admin extends React.Component {
     onAddFood = () => {
         const item = this.state.item;
         const price = this.state.price;
-
+        const items = this.state.added_items;
         (item === '' || price === '') ? alert('input is empty') :
-            this.state.added_items.push(item);
-        this.setState({item: ''});
-
-        (price === '') ? alert('input is empty') :
-            this.state.added_price.push(price)
-        this.setState({price: ''})
-
+            items.push({itemName: item, price});
+        this.setState({item: '', added_items: items});
     }
 
     onDelete = (index) => {
@@ -85,14 +80,13 @@ export class Admin extends React.Component {
                         <span className='table-price'><b>Price</b></span>
 
                     </div>
-
                     {add.map((item, index) =>
                         <div key={index}>
 
                             <div><span className='line'/></div>
                             <div className='table-head'>
-                                <span className='table-name-admin'>{item}</span>
-                                <span className='table-price-admin'>120 som</span>
+                                <span className='table-name-admin'>{item.itemName}</span>
+                                <span className='table-price-admin'>{item.price} som</span>
                                 <div onClick={() => this.onDelete(index)} className='box-close'><span
                                     className='close'/></div>
                             </div>
