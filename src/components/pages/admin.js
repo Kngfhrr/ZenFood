@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import logo from "../image/Group.svg";
 import "../styles/admin.css";
 import moment from 'moment'
@@ -10,22 +10,24 @@ export class Admin extends React.Component {
         item: '',
         price: '',
         added_items: [],
+        added_price: []
 
-    }
-
-
-
-    onChangeItem = (e) => {
-        this.setState({item: e.target.value, price: e.target.value})
     }
 
     onAddFood = () => {
         const item = this.state.item;
-        (item === '') ? console.log('empty') :
+        const price = this.state.price;
+
+        (item === '' || price === '') ? alert('input is empty') :
             this.state.added_items.push(item);
-            this.setState({item: ''})
+        this.setState({item: ''});
+
+        (price === '') ? alert('input is empty') :
+            this.state.added_price.push(price)
+        this.setState({price: ''})
 
     }
+
     onDelete = (index) => {
         const added_i = this.state.added_items;
         added_i.splice(index, 1);
@@ -59,11 +61,15 @@ export class Admin extends React.Component {
                 <div className='add-form'>
                     <div className='add-table-position'>
                         <span>Name food</span>
-                        <input onChange={this.onChangeItem} value={this.state.item} className="add-item-input"></input>
+                        <input onChange={(e) => {
+                            this.setState({item: e.target.value})
+                        }} value={this.state.item} className="add-item-input"></input>
                     </div>
                     <div className='add-table-position'>
                         <span>Price</span>
-                        <input onChange={this.onChangePrice} className="add-item-price"></input>
+                        <input onChange={(e) => {
+                            this.setState({price: e.target.value})
+                        }} value={this.state.price} className="add-item-price"></input>
 
                     </div>
                     <div>
