@@ -9,9 +9,10 @@ export default function Test() {
     const [price, setPrice] = useState({
         priced: '',
         items: '',
-        added_prices: [],
-        added_items: []
     });
+
+    const [arrayPrice, setArrayPrice] = useState([]);
+    const [arrayItem, setArrayItem] = useState([]);
 
 
 
@@ -24,13 +25,15 @@ export default function Test() {
         const changeItem  = {items: e.target.value}
         setPrice(changeItem);
     }
-    const onAddPrice = () => {
-        const onAddValue = {...price, added_price: price.priced}
-        setPrice(onAddValue)
-        console.log(price)
 
 
-    }
+    const onAddValue = () => {
+      const addPrice =  (price.priced === '') ? console.log('empty') : arrayPrice.push(price.priced);
+         setPrice(addPrice);
+         const addItem = (price.items === '') ? console.log('empty') : arrayItem.push(price.items);
+           setPrice(addItem);
+     }
+
 
     return (<div>
             <div className="header">
@@ -64,7 +67,7 @@ export default function Test() {
 
                 </div>
                 <div>
-                    <button onClick={onAddPrice} className='add-button'>Add
+                    <button onClick={onAddValue} className='add-button'>Add
                     </button>
                 </div>
 
@@ -77,12 +80,13 @@ export default function Test() {
                     <span className='table-price'><b>Price</b></span>
                 </div>
 
-                {price.added_prices.map((item, index) =>
+                {arrayPrice.map((item, index) =>
+
                 <div key={index}>
                 <div><span className='line'/></div>
                 <div className='table-head'>
                 <span className='table-name-admin'>{item}</span>
-                <span className='table-price-admin'>120 som</span>
+                <span className='table-price-admin'>111 som</span>
                 <div onClick={() => this.onDelete(index)} className='box-close'><span
                 className='close'/></div>
                 </div>
@@ -90,9 +94,9 @@ export default function Test() {
                 }
 
                 <div><span className='line'/></div>
-                <button onClick={() => {
-                    setPrice(price)
-                }} className='table-button'>Add dish
+                <button onClick={()=>
+                console.log(arrayItem)
+                } className='table-button'>Add dish
                 </button>
             </div>
         </div>

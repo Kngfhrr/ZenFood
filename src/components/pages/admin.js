@@ -10,25 +10,21 @@ export class Admin extends React.Component {
         item: '',
         price: '',
         added_items: [],
+
     }
 
 
 
     onChangeItem = (e) => {
         this.setState({item: e.target.value, price: e.target.value})
-        console.log(this.state.test)
     }
 
     onAddFood = () => {
         const item = this.state.item;
-        if (item === '') {
-           return;
-        }
-        else {
+        (item === '') ? console.log('empty') :
             this.state.added_items.push(item);
-            // this.state.added.price.push(this.state.price);
             this.setState({item: ''})
-        }
+
     }
     onDelete = (index) => {
         const added_i = this.state.added_items;
@@ -86,6 +82,7 @@ export class Admin extends React.Component {
 
                     {add.map((item, index) =>
                         <div key={index}>
+
                             <div><span className='line'/></div>
                             <div className='table-head'>
                                 <span className='table-name-admin'>{item}</span>
